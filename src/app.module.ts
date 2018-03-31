@@ -3,7 +3,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Connection } from 'typeorm';
 
 import { AppController } from './app.controller';
-import { PublicFeedModule } from './public-feed/public-feed.module';
+import { EntryModule } from './entry/entry.module';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -17,7 +18,8 @@ import { PublicFeedModule } from './public-feed/public-feed.module';
       entities: [__dirname + '/../**/*.entity{.ts,.js}'],
       synchronize: process.env.NODE_ENV === 'development',
     }),
-    PublicFeedModule,
+    EntryModule,
+    UserModule,
   ],
   controllers: [AppController],
   // components: [],

@@ -7,7 +7,7 @@ import {
 } from 'typeorm';
 
 @Entity()
-export class FeedItem {
+export class Entry {
   @PrimaryGeneratedColumn() id: number;
   @Column('text') title: string;
   @Column('text') description: string;
