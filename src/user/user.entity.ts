@@ -1,15 +1,21 @@
 import {
   Entity,
   Column,
-  PrimaryGeneratedColumn,
+  PrimaryColumn,
   CreateDateColumn,
   UpdateDateColumn,
+  OneToMany,
 } from 'typeorm';
+import { Entry } from 'entry/entry.entity';
 
 @Entity()
 export class User {
-  @PrimaryGeneratedColumn() id: number;
-  @Column('text') username: string;
+  @PrimaryColumn() id: string;
+  @Column('text') name: string;
+  @Column() picture: string;
   @CreateDateColumn() createdAt: Date;
   @UpdateDateColumn() updatedAt: Date;
+
+  @OneToMany(type => Entry, entry => entry.user)
+  entries: Entry[];
 }

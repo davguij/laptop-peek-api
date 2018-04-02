@@ -12,6 +12,6 @@ export class EntryController {
 
   @Post()
   create(@Body() input) {
-    return this.entrySrv.create(input);
+    return this.entrySrv.create(input.entry, input.user);
   }
 }

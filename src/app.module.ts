@@ -19,7 +19,7 @@ import { UserModule } from './user/user.module';
       synchronize: process.env.NODE_ENV === 'development',
     }),
     EntryModule,
-    UserModule,
+    // UserModule,
   ],
   controllers: [AppController],
   // components: [],
